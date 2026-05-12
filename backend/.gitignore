@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+artifacts/
+upload/
+avatar/
+.env
+.env.*
+!.env.example

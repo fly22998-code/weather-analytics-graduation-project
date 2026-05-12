@@ -1,0 +1,15 @@
+cryptography==46.0.6
+Django==4.2.16
+django_ratelimit==4.1.0
+django_redis==6.0.0
+djangorestframework==3.17.1
+pandas==3.0.2
+psutil==5.9.4
+PyJWT==2.12.1
+redis==7.4.0
+Requests==2.33.1
+gunicorn==22.0.0
+django-cors-headers==4.4.0
+mysqlclient==2.2.7
+python-dotenv==1.0.1
+

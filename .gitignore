@@ -1,0 +1,27 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# env files
+.env
+.env.*
+!.env.example
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+
+# backend
+backend/__pycache__/
+backend/**/*.pyc
+backend/static/
+backend/upload/
+backend/avatar/
+backend/*.sqlite3
+backend/*.log
+
+# misc
+artifacts/
+logs/

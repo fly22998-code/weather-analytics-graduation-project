@@ -1,0 +1,24 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "types": ["vite/client", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "verbatimModuleSyntax": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    
+    /* 关闭严格模式避免大量报错，按需开启 */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*"]
+}
