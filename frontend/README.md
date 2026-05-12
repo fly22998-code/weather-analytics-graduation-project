@@ -73,12 +73,20 @@ Windows PowerShell:
 Copy-Item .env.example .env
 ```
 
+复制完成后，请先根据 `.env.example` 中的中英双语注释填写真实配置，再执行启动命令，尤其是后端接口地址和签名密钥。
+
+After copying the template, fill in the real configuration values according to the bilingual comments in `.env.example` before starting the app, especially the backend API URL and signing secret.
+
 4. 修改接口地址 / Update the backend API URL
 
 ```env
 VITE_API_BASE_URL=http://localhost:8000
 VITE_API_SIGN_SECRET=replace-with-your-sign-secret
 ```
+
+如果这里仍然保留默认占位值，前端即使能启动，也可能出现接口请求失败、签名校验失败或无法正确连接后端的问题。
+
+If you keep the default placeholder values here, the frontend may still start, but API requests can fail, request signing may break, or the app may not connect to the backend correctly.
 
 5. 启动开发环境 / Start the dev server
 

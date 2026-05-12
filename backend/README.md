@@ -73,6 +73,10 @@ Copy-Item .env.example .env
 
 This GitHub version already includes automatic `.env` loading.
 
+注意：复制完成后不能直接启动，必须先根据 `.env.example` 中的中英双语注释填写你自己的真实配置。
+
+Note: After copying the template, you cannot start the backend directly. You must first fill in your own real configuration values according to the bilingual comments in `.env.example`.
+
 ### 3. 配置数据库、Redis、邮件和天气接口参数 / Configure DB, Redis, mail, and weather API settings
 
 至少需要正确填写：
@@ -93,6 +97,10 @@ QWEATHER_KID=your-qweather-kid
 QWEATHER_SUB=your-qweather-sub
 API_SIGN_SECRET=your-sign-secret
 ```
+
+如果这些配置没有改成你自己的真实值，后端通常会出现数据库连接失败、Redis 连接失败、邮件发送失败或第三方天气接口无法返回数据等问题。
+
+If these values are not replaced with your own real configuration, the backend will usually fail with issues such as database connection errors, Redis connection errors, mail sending failures, or missing weather API responses.
 
 ### 4. 初始化数据库 / Apply database migrations
 

@@ -105,6 +105,10 @@ Windows PowerShell:
 Copy-Item .env.example .env
 ```
 
+复制完成后，请先根据 `.env.example` 中的中英双语注释，填写你自己的真实配置，再执行启动命令，例如数据库、Redis、JWT、邮箱 SMTP、第三方天气 API 和签名密钥等。
+
+After copying the template, you must fill in your own real configuration values according to the bilingual comments in `.env.example` before starting the service, such as the database, Redis, JWT, SMTP mail account, third-party weather API credentials, and signing secret.
+
 安装依赖并启动：
 
 ```bash
@@ -145,6 +149,10 @@ Copy-Item .env.example .env
 VITE_API_BASE_URL=http://localhost:8000
 VITE_API_SIGN_SECRET=replace-with-your-sign-secret
 ```
+
+复制完成后，请先按 `.env.example` 注释填写前端接口地址和签名密钥，再执行安装和启动命令。
+
+After copying the template, make sure to fill in the frontend API base URL and signing secret according to `.env.example` before installing dependencies and starting the app.
 
 安装依赖并启动：
 
