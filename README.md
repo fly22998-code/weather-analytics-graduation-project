@@ -9,6 +9,11 @@ A Full-Stack Weather Analytics Platform (Graduation Project)
 
 This is a full-stack weather data query and analytics system built with a separated frontend-backend architecture. The frontend is based on `Vue 3 + TypeScript + Vite`, while the backend uses `Django + MySQL + Redis`, combined with third-party weather services to provide real-time weather, historical weather, air quality, and weather prediction features.
 
+## 项目展示与联系方式 / Demo and Contact
+
+- 项目展示 / Live Demo: [www.weaquery.com](https://www.weaquery.com)
+- 联系方式 / Contact: `B2431678846`
+
 ## 毕业设计定位 / Graduation Project Positioning
 
 本项目可作为天气数据服务、全栈开发、运维部署与接口安全结合的综合型毕业设计项目，重点体现以下能力：
