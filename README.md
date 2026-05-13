@@ -1,7 +1,9 @@
+<div align="center">
+
 # Weather Analytics Graduation Project
 
-> 毕业设计｜基于 `Vue 3 + Django` 的天气数据查询与分析平台。
-> Graduation Project | A full-stack weather analytics platform built with `Vue 3 + Django`.
+毕业设计｜基于 `Vue 3 + Django` 的天气数据查询与分析平台。  
+Graduation Project | A full-stack weather analytics platform built with `Vue 3 + Django`.
 
 [![Vue 3](https://img.shields.io/badge/Vue-3-42b883?style=flat-square&logo=vue.js)](https://vuejs.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-0c4b33?style=flat-square&logo=django)](https://www.djangoproject.com/)
@@ -9,16 +11,40 @@
 [![Redis](https://img.shields.io/badge/Redis-Cache-dc382d?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
+**[在线展示](https://www.weaquery.com) · [Docker 部署](#docker-compose-部署--docker-compose-deployment) · [接口文档](./docs/API.md) · [前端说明](./frontend/README.md) · [后端说明](./backend/README.md)**
+
+</div>
+
+---
+
+## 目录 / Contents
+
+- [项目展示 / Demo](#项目展示--demo)
+- [项目简介 / Overview](#项目简介--overview)
+- [功能亮点 / Highlights](#功能亮点--highlights)
+- [技术栈 / Tech Stack](#技术栈--tech-stack)
+- [项目结构 / Structure](#项目结构--structure)
+- [Docker Compose 部署 / Docker Compose Deployment](#docker-compose-部署--docker-compose-deployment)
+- [本地开发 / Local Development](#本地开发--local-development)
+- [文档 / Documentation](#文档--documentation)
+- [维护方向 / Future Work](#维护方向--future-work)
+
 ## 项目展示 / Demo
 
-- 在线展示 / Live Demo: [www.weaquery.com](https://www.weaquery.com)
-- 联系方式 / Contact: `B2431678846`
+| 项目 / Item | 信息 / Info |
+| --- | --- |
+| 在线展示 / Live Demo | [www.weaquery.com](https://www.weaquery.com) |
+| 联系方式 / Contact | `B2431678846` |
+
+---
 
 ## 项目简介 / Overview
 
 这是一个以前后端分离方式实现的天气数据查询与分析系统。前端使用 `Vue 3 + TypeScript + Vite`，后端使用 `Django + MySQL + Redis`，并对接第三方天气服务实现实时天气、历史天气、历史空气质量、天气预测、后台管理和访问统计等功能。
 
 This project is a full-stack weather data query and analytics system. The frontend is built with `Vue 3 + TypeScript + Vite`, while the backend uses `Django + MySQL + Redis`. It integrates third-party weather APIs to provide real-time weather, historical weather, historical air quality, weather prediction, admin management, and traffic statistics.
+
+---
 
 ## 功能亮点 / Highlights
 
@@ -32,6 +58,8 @@ This project is a full-stack weather data query and analytics system. The fronte
 | 后台管理 / Admin Console | 用户管理、流量统计、接口调用分析和异常统计 |
 | 部署实践 / Deployment | Docker Compose、Nginx、Gunicorn、MySQL、Redis、Cloudflare |
 
+---
+
 ## 技术栈 / Tech Stack
 
 | 方向 / Area | 技术 / Technologies |
@@ -39,6 +67,8 @@ This project is a full-stack weather data query and analytics system. The fronte
 | Frontend | Vue 3, TypeScript, Vite, Vue Router, Axios, Element Plus, ECharts |
 | Backend | Python, Django, MySQL, Redis, Gunicorn, PyJWT, django-redis |
 | DevOps | Linux, Docker Compose, Nginx, containerd, nerdctl, Cloudflare |
+
+---
 
 ## 项目结构 / Structure
 
@@ -51,11 +81,16 @@ weather-analytics-graduation-project/
   .env.example           Root deployment environment template
 ```
 
+---
+
 ## Docker Compose 部署 / Docker Compose Deployment
 
 推荐优先使用 Docker Compose。此方式会自动启动 `MySQL`、`Redis`、`Django` 和 `Vue + Nginx`，你只需要修改项目根目录的 `.env`，不需要再单独修改 `backend/.env` 或 `frontend/.env`。
 
 Docker Compose is the recommended way to run this project. It starts `MySQL`, `Redis`, `Django`, and `Vue + Nginx` together. In this mode, you only need to edit the root-level `.env` file. You do not need separate `backend/.env` or `frontend/.env` files.
+
+> [!TIP]
+> 推荐从 Docker Compose 开始部署。根目录 `.env` 是 Docker 模式唯一需要手动配置的环境文件。
 
 ### Docker 模式下需要改什么 / What to edit in Docker mode
 
@@ -129,6 +164,8 @@ docker compose up -d --build
 > `backend/.env.example` 和 `frontend/.env.example` 是给本地分开开发准备的，不是 Docker 部署必填文件。
 > 首次部署前请先确定 `MYSQL_*` 用户名和密码；如果数据库卷已经初始化后又修改这些值，需要执行 `docker compose down -v` 后重新启动。
 
+---
+
 ## 本地开发 / Local Development
 
 如果你不使用 Docker，而是想在本机分别启动前后端，请使用这一套配置。此时你需要自己先安装并启动本机 `MySQL` 和 `Redis`。
@@ -175,11 +212,15 @@ npm run dev
 | Docker Compose 部署 | 根目录 `.env` | Compose 自动启动的容器 |
 | 本地分开开发 | `backend/.env` + `frontend/.env` | 你本机自己安装的服务 |
 
+---
+
 ## 文档 / Documentation
 
 - 前端说明 / Frontend Guide: [frontend/README.md](./frontend/README.md)
 - 后端说明 / Backend Guide: [backend/README.md](./backend/README.md)
 - 接口文档 / API Document: [docs/API.md](./docs/API.md)
+
+---
 
 ## 维护方向 / Future Work
 
