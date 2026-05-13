@@ -71,9 +71,12 @@ Docker Compose is the recommended way to run this project. It starts `MySQL`, `R
 容器内部数据库和缓存地址已经写好：
 
 - `DB_HOST=db`
+- `DB_PORT=3306`
 - `REDIS_URL=redis://redis:6379/1`
 
-也就是说，Docker 部署时不需要把数据库主机改成 `localhost`，因为 Django 连接的是 Compose 里启动的 `db` 容器。
+也就是说，Docker 部署时不需要把数据库主机改成 `localhost`，也不需要重复填写 `DB_NAME`、`DB_USER`、`DB_PASSWORD`。后端会默认复用 `MYSQL_DATABASE`、`MYSQL_USER`、`MYSQL_PASSWORD`。
+
+`MYSQL_PORT` 是宿主机访问 MySQL 的映射端口，例如 `3307:3306` 中的 `3307`。`DB_PORT` 是 Django 容器连接 MySQL 容器的内部端口，Docker 模式下固定保持 `3306`。
 
 ### Docker 快速启动 / Quick Start with Docker
 
@@ -114,12 +117,13 @@ docker compose up -d --build
 | --- | --- |
 | Frontend | `http://localhost:8080` |
 | Backend | `http://localhost:8000` |
-| MySQL | `localhost:3306` |
+| MySQL | `localhost:${MYSQL_PORT}` |
 | Redis | `localhost:6379` |
 
 > [!IMPORTANT]
 > Docker Compose 部署时，只看根目录 `.env.example` / `.env`。
 > `backend/.env.example` 和 `frontend/.env.example` 是给本地分开开发准备的，不是 Docker 部署必填文件。
+> 首次部署前请先确定 `MYSQL_*` 用户名和密码；如果数据库卷已经初始化后又修改这些值，需要执行 `docker compose down -v` 后重新启动。
 
 ## 本地开发 / Local Development
 

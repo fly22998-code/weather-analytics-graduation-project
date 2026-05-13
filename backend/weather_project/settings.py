@@ -71,9 +71,9 @@ WSGI_APPLICATION = 'weather_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME', 'weather'),
-        'USER': os.getenv('DB_USER', 'root'),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'NAME': os.getenv('DB_NAME') or os.getenv('MYSQL_DATABASE', 'weather'),
+        'USER': os.getenv('DB_USER') or os.getenv('MYSQL_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD') or os.getenv('MYSQL_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '3306'),
         'OPTIONS': {
