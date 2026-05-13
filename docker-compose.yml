@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: ${COMPOSE_PROJECT_NAME:-weather}_mysql
+    restart: unless-stopped
+    command:
+      - mysqld
+      - --performance-schema=OFF
+      - --max-connections=50
+      - --innodb-buffer-pool-size=128M
+      - --innodb-log-buffer-size=8M
+      - --binlog-expire-logs-seconds=604800
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  redis:
+    image: redis:7-alpine
+    container_name: ${COMPOSE_PROJECT_NAME:-weather}_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  django-api:
+    build: ./backend
+    container_name: ${COMPOSE_PROJECT_NAME:-weather}_backend
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    volumes:
+      - media_data:/app/upload
+
+  vue-web:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+        VITE_API_SIGN_SECRET: ${VITE_API_SIGN_SECRET}
+    container_name: ${COMPOSE_PROJECT_NAME:-weather}_frontend
+    restart: unless-stopped
+    depends_on:
+      - django-api
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    volumes:
+      - media_data:/usr/share/nginx/html/upload
+
+volumes:
+  mysql_data:
+  redis_data:
+  media_data:

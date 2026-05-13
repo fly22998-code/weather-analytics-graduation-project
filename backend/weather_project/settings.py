@@ -13,6 +13,7 @@ except ImportError:
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 if load_dotenv:
+    load_dotenv(BASE_DIR.parent / '.env')
     load_dotenv(BASE_DIR / '.env')
 
 SENIVERSE_API_KEY = os.getenv('SENIVERSE_API_KEY', '')
@@ -126,14 +127,17 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
 
+redis_options = {
+    'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+}
+redis_password = os.getenv('REDIS_PASSWORD', '')
+if redis_password:
+    redis_options['PASSWORD'] = redis_password
+
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1'),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'PASSWORD': os.getenv('REDIS_PASSWORD', ''),
-        }
+        'OPTIONS': redis_options,
     }
 }
-
