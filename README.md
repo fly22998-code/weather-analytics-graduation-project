@@ -92,6 +92,12 @@ nano .env
 docker compose up -d --build
 ```
 
+说明：
+当前公开版本前端镜像可直接在常规 Docker 环境中构建，不需要额外安装 `gifsicle`、`autoreconf` 等图片压缩编译工具。
+
+Note:
+The current public frontend image can be built in a standard Docker environment without installing extra image-compression build tools such as `gifsicle` or `autoreconf`.
+
 Windows PowerShell:
 
 ```powershell
