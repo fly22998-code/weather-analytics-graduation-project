@@ -81,17 +81,21 @@ Docker Compose is the recommended way to run this project. It starts `MySQL`, `R
 ### Docker 快速启动 / Quick Start with Docker
 
 ```bash
-# 克隆项目 / Clone the repository
+# 1. 克隆项目 / Clone the repository
 git clone https://github.com/fly22998-code/weather-analytics-graduation-project.git
 cd weather-analytics-graduation-project
 
-# 复制环境变量模板 / Create your environment file
+# 2. 生成根目录环境变量文件 / Create the root environment file
 cp .env.example .env
 
-# 编辑根目录 .env / Edit the root .env only
+# 3. 编辑根目录 .env（二选一）/ Edit the root .env only, choose one editor
+# 使用 nano / Use nano
 nano .env
 
-# 启动全部服务 / Start all services
+# 或使用 vim / Or use vim
+vim .env
+
+# 4. 启动全部服务 / Start all services
 docker compose up -d --build
 ```
 
