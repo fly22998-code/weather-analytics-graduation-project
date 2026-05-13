@@ -75,7 +75,7 @@ const formatTemperature = (value: unknown, fallback = '--') => {
 const formatDate = (date: string) => {
   if (!date) return '--';
   if (/^\d{8}$/.test(date)) return `${date.slice(0, 4)}/${date.slice(4, 6)}/${date.slice(6, 8)}`;
-  return date.replaceAll('-', '/');
+  return date.split('-').join('/');
 };
 
 const displayLocationPath = computed(() => {
