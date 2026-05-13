@@ -53,9 +53,29 @@ weather-analytics-graduation-project/
 
 ## Docker Compose 部署 / Docker Compose Deployment
 
-推荐使用 Docker Compose 快速部署。项目会自动启动 MySQL、Redis、Django 后端和 Vue 前端，后端容器启动时会自动等待数据库并执行迁移。
+推荐优先使用 Docker Compose。此方式会自动启动 `MySQL`、`Redis`、`Django` 和 `Vue + Nginx`，你只需要修改项目根目录的 `.env`，不需要再单独修改 `backend/.env` 或 `frontend/.env`。
 
-Docker Compose is the recommended deployment method. It starts MySQL, Redis, the Django backend, and the Vue frontend. The backend container automatically waits for MySQL and runs migrations on startup.
+Docker Compose is the recommended way to run this project. It starts `MySQL`, `Redis`, `Django`, and `Vue + Nginx` together. In this mode, you only need to edit the root-level `.env` file. You do not need separate `backend/.env` or `frontend/.env` files.
+
+### Docker 模式下需要改什么 / What to edit in Docker mode
+
+只修改根目录 `.env` 中这些内容：
+
+- `MYSQL_DATABASE` `MYSQL_USER` `MYSQL_PASSWORD` `MYSQL_ROOT_PASSWORD`
+- `DJANGO_SECRET_KEY` `JWT_SECRET_KEY`
+- `EMAIL_HOST_USER` `EMAIL_HOST_PASSWORD` `DEFAULT_FROM_EMAIL`
+- `SENIVERSE_API_KEY` `QWEATHER_PRIVATE_KEY` `QWEATHER_KID` `QWEATHER_SUB`
+- `API_SIGN_SECRET` `VITE_API_SIGN_SECRET`
+- 如果你改了端口，再调整 `FRONTEND_PORT` `BACKEND_PORT` `MYSQL_PORT` `REDIS_PORT`
+
+容器内部数据库和缓存地址已经写好：
+
+- `DB_HOST=db`
+- `REDIS_URL=redis://redis:6379/1`
+
+也就是说，Docker 部署时不需要把数据库主机改成 `localhost`，因为 Django 连接的是 Compose 里启动的 `db` 容器。
+
+### Docker 快速启动 / Quick Start with Docker
 
 ```bash
 # 克隆项目 / Clone the repository
@@ -65,7 +85,7 @@ cd weather-analytics-graduation-project
 # 复制环境变量模板 / Create your environment file
 cp .env.example .env
 
-# 修改必要配置 / Edit required configuration
+# 编辑根目录 .env / Edit the root .env only
 nano .env
 
 # 启动全部服务 / Start all services
@@ -92,14 +112,25 @@ docker compose up -d --build
 | Redis | `localhost:6379` |
 
 > [!IMPORTANT]
-> `.env.example` 只是模板。启动前请先填写 MySQL、Django、JWT、邮件、第三方天气 API 和签名密钥等配置。
-> `.env.example` is only a template. Before starting, fill in MySQL, Django, JWT, mail, third-party weather API, and signing configuration.
+> Docker Compose 部署时，只看根目录 `.env.example` / `.env`。
+> `backend/.env.example` 和 `frontend/.env.example` 是给本地分开开发准备的，不是 Docker 部署必填文件。
 
 ## 本地开发 / Local Development
 
-如果你希望分开启动前后端进行开发，可以使用下面的方式。
+如果你不使用 Docker，而是想在本机分别启动前后端，请使用这一套配置。此时你需要自己先安装并启动本机 `MySQL` 和 `Redis`。
 
-### Backend
+If you are not using Docker and want to run the backend and frontend separately on your machine, use this workflow instead. In this mode, you need your own local `MySQL` and `Redis` services.
+
+### 本地开发需要改什么 / What to edit in local development
+
+#### Backend
+
+使用 `backend/.env.example`：
+
+- `DB_HOST=localhost`
+- `DB_PORT=3306`
+- `REDIS_URL=redis://127.0.0.1:6379/1`
+- 其余数据库、JWT、邮件、天气 API、签名相关配置按你的本机环境填写
 
 ```bash
 cd backend
@@ -109,7 +140,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-### Frontend
+#### Frontend
+
+使用 `frontend/.env.example`：
+
+- `VITE_API_BASE_URL=http://localhost:8000`
+- `VITE_API_SIGN_SECRET` 需要和后端签名密钥保持一致
 
 ```bash
 cd frontend
@@ -117,6 +153,13 @@ cp .env.example .env
 npm install
 npm run dev
 ```
+
+### 两种启动方式的区别 / Difference between the two modes
+
+| 模式 / Mode | 使用的配置文件 / Config file | MySQL / Redis 来源 |
+| --- | --- | --- |
+| Docker Compose 部署 | 根目录 `.env` | Compose 自动启动的容器 |
+| 本地分开开发 | `backend/.env` + `frontend/.env` | 你本机自己安装的服务 |
 
 ## 文档 / Documentation
 
