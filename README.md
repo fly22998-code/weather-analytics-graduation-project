@@ -6,11 +6,19 @@
 
 毕业设计｜基于 `Vue 3 + Django` 的天气数据查询与分析平台。
 
+`毕业设计` · `前后端分离` · `天气数据分析` · `Docker Compose 部署` · `Redis 缓存` · `后台统计`
+
 [![Vue 3](https://img.shields.io/badge/Vue-3-42b883?style=flat-square&logo=vue.js)](https://vuejs.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-0c4b33?style=flat-square&logo=django)](https://www.djangoproject.com/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479a1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Redis](https://img.shields.io/badge/Redis-Cache-dc382d?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+
+[![实时天气](https://img.shields.io/badge/实时天气-Real--time-3b82f6?style=flat-square)](#功能亮点)
+[![历史天气](https://img.shields.io/badge/历史天气-Historical-f59e0b?style=flat-square)](#功能亮点)
+[![空气质量](https://img.shields.io/badge/空气质量-AQI-22c55e?style=flat-square)](#功能亮点)
+[![天气预测](https://img.shields.io/badge/天气预测-Prediction-8b5cf6?style=flat-square)](#功能亮点)
+[![后台管理](https://img.shields.io/badge/后台管理-Admin-64748b?style=flat-square)](#功能亮点)
 
 **🌍 [在线展示](https://www.weaquery.com) · 🐳 [Docker 部署](#docker-compose-部署) · 📘 [接口文档](./docs/API.md) · 🖥️ [前端说明](./frontend/README.md) · ⚙️ [后端说明](./backend/README.md)**
 

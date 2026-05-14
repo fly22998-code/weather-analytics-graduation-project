@@ -6,11 +6,19 @@
 
 A full-stack weather data query and analytics platform built with `Vue 3 + Django`.
 
+`Graduation Project` · `Full-stack` · `Weather Analytics` · `Docker Compose` · `Redis Cache` · `Admin Statistics`
+
 [![Vue 3](https://img.shields.io/badge/Vue-3-42b883?style=flat-square&logo=vue.js)](https://vuejs.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-0c4b33?style=flat-square&logo=django)](https://www.djangoproject.com/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479a1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Redis](https://img.shields.io/badge/Redis-Cache-dc382d?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+
+[![Real-time Weather](https://img.shields.io/badge/Real--time-Weather-3b82f6?style=flat-square)](#highlights)
+[![Historical Weather](https://img.shields.io/badge/Historical-Weather-f59e0b?style=flat-square)](#highlights)
+[![Air Quality](https://img.shields.io/badge/Air-Quality-22c55e?style=flat-square)](#highlights)
+[![Prediction](https://img.shields.io/badge/Weather-Prediction-8b5cf6?style=flat-square)](#highlights)
+[![Admin Console](https://img.shields.io/badge/Admin-Console-64748b?style=flat-square)](#highlights)
 
 **🌍 [Live Demo](https://www.weaquery.com) · 🐳 [Docker Deployment](#docker-compose-deployment) · 📘 [API Docs](./docs/API.md) · 🖥️ [Frontend Guide](./frontend/README.md) · ⚙️ [Backend Guide](./backend/README.md)**
 
