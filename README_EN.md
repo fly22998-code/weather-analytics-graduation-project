@@ -2,7 +2,7 @@
 
 # Weather Analytics Graduation Project
 
-**[中文](./README.md) | English**
+**🌐 [中文](./README.md) | English**
 
 A full-stack weather data query and analytics platform built with `Vue 3 + Django`.
 
@@ -12,25 +12,26 @@ A full-stack weather data query and analytics platform built with `Vue 3 + Djang
 [![Redis](https://img.shields.io/badge/Redis-Cache-dc382d?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
-**[Live Demo](https://www.weaquery.com) · [Docker Deployment](#docker-compose-deployment) · [API Docs](./docs/API.md) · [Frontend Guide](./frontend/README.md) · [Backend Guide](./backend/README.md)**
+**🌍 [Live Demo](https://www.weaquery.com) · 🐳 [Docker Deployment](#docker-compose-deployment) · 📘 [API Docs](./docs/API.md) · 🖥️ [Frontend Guide](./frontend/README.md) · ⚙️ [Backend Guide](./backend/README.md)**
 
 </div>
 
 ---
 
-## Contents
+## 📌 Contents
 
-- [Demo](#demo)
-- [Overview](#overview)
-- [Highlights](#highlights)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Docker Compose Deployment](#docker-compose-deployment)
-- [Local Development](#local-development)
-- [Documentation](#documentation)
-- [Future Work](#future-work)
+- [🌍 Demo](#demo)
+- [📖 Overview](#overview)
+- [✨ Highlights](#highlights)
+- [🧰 Tech Stack](#tech-stack)
+- [📁 Project Structure](#project-structure)
+- [🐳 Docker Compose Deployment](#docker-compose-deployment)
+- [💻 Local Development](#local-development)
+- [📚 Documentation](#documentation)
+- [🚧 Future Work](#future-work)
 
-## Demo
+<a id="demo"></a>
+## 🌍 Demo
 
 | Item | Info |
 | --- | --- |
@@ -39,27 +40,30 @@ A full-stack weather data query and analytics platform built with `Vue 3 + Djang
 
 ---
 
-## Overview
+<a id="overview"></a>
+## 📖 Overview
 
 This project is a full-stack weather data query and analytics system. The frontend is built with `Vue 3 + TypeScript + Vite`, while the backend uses `Django + MySQL + Redis`. It integrates third-party weather APIs to provide real-time weather, historical weather, historical air quality, weather prediction, admin management, and traffic statistics.
 
 ---
 
-## Highlights
+<a id="highlights"></a>
+## ✨ Highlights
 
 | Module | Description |
 | --- | --- |
-| Real-time Weather | Query city weather, temperature, humidity, wind, precipitation, and more |
-| Historical Weather | Fetch recent 10-day historical weather and hourly records |
-| Air Quality | Display historical AQI, pollutant metrics, and trend data |
-| Weather Prediction | Predict weather trends based on historical samples and compare with real-time data |
-| User System | Login, registration, password recovery, guest mode, and query quota limits |
-| Admin Console | User management, traffic statistics, API call analytics, and error statistics |
-| Deployment Practice | Docker Compose, Nginx, Gunicorn, MySQL, Redis, and Cloudflare |
+| 🌦️ Real-time Weather | Query city weather, temperature, humidity, wind, precipitation, and more |
+| 🕰️ Historical Weather | Fetch recent 10-day historical weather and hourly records |
+| 🍃 Air Quality | Display historical AQI, pollutant metrics, and trend data |
+| 📈 Weather Prediction | Predict weather trends based on historical samples and compare with real-time data |
+| 👤 User System | Login, registration, password recovery, guest mode, and query quota limits |
+| 🛠️ Admin Console | User management, traffic statistics, API call analytics, and error statistics |
+| 🚀 Deployment Practice | Docker Compose, Nginx, Gunicorn, MySQL, Redis, and Cloudflare |
 
 ---
 
-## Tech Stack
+<a id="tech-stack"></a>
+## 🧰 Tech Stack
 
 | Area | Technologies |
 | --- | --- |
@@ -69,7 +73,8 @@ This project is a full-stack weather data query and analytics system. The fronte
 
 ---
 
-## Project Structure
+<a id="project-structure"></a>
+## 📁 Project Structure
 
 ```text
 weather-analytics-graduation-project/
@@ -82,7 +87,8 @@ weather-analytics-graduation-project/
 
 ---
 
-## Docker Compose Deployment
+<a id="docker-compose-deployment"></a>
+## 🐳 Docker Compose Deployment
 
 Docker Compose is the recommended way to run this project. It starts `MySQL`, `Redis`, `Django`, and `Vue + Nginx` together. In this mode, you only need to edit the root-level `.env` file. You do not need separate `backend/.env` or `frontend/.env` files.
 
@@ -159,7 +165,8 @@ Default service URLs:
 
 ---
 
-## Local Development
+<a id="local-development"></a>
+## 💻 Local Development
 
 If you are not using Docker and want to run the backend and frontend separately on your machine, use this workflow instead. In this mode, you need your own local `MySQL` and `Redis` services.
 
@@ -205,7 +212,8 @@ npm run dev
 
 ---
 
-## Documentation
+<a id="documentation"></a>
+## 📚 Documentation
 
 - Frontend Guide: [frontend/README.md](./frontend/README.md)
 - Backend Guide: [backend/README.md](./backend/README.md)
@@ -213,7 +221,8 @@ npm run dev
 
 ---
 
-## Future Work
+<a id="future-work"></a>
+## 🚧 Future Work
 
 - Improve the weather prediction model and backtesting workflow
 - Improve admin analytics and visualization

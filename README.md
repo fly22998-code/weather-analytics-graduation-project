@@ -2,7 +2,7 @@
 
 # 天气数据查询与分析平台
 
-**中文 | [English](./README_EN.md)**
+**🌐 中文 | [English](./README_EN.md)**
 
 毕业设计｜基于 `Vue 3 + Django` 的天气数据查询与分析平台。
 
@@ -12,25 +12,26 @@
 [![Redis](https://img.shields.io/badge/Redis-Cache-dc382d?style=flat-square&logo=redis&logoColor=white)](https://redis.io/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
-**[在线展示](https://www.weaquery.com) · [Docker 部署](#docker-compose-部署) · [接口文档](./docs/API.md) · [前端说明](./frontend/README.md) · [后端说明](./backend/README.md)**
+**🌍 [在线展示](https://www.weaquery.com) · 🐳 [Docker 部署](#docker-compose-部署) · 📘 [接口文档](./docs/API.md) · 🖥️ [前端说明](./frontend/README.md) · ⚙️ [后端说明](./backend/README.md)**
 
 </div>
 
 ---
 
-## 目录
+## 📌 目录
 
-- [项目展示](#项目展示)
-- [项目简介](#项目简介)
-- [功能亮点](#功能亮点)
-- [技术栈](#技术栈)
-- [项目结构](#项目结构)
-- [Docker Compose 部署](#docker-compose-部署)
-- [本地开发](#本地开发)
-- [文档](#文档)
-- [维护方向](#维护方向)
+- [🌍 项目展示](#项目展示)
+- [📖 项目简介](#项目简介)
+- [✨ 功能亮点](#功能亮点)
+- [🧰 技术栈](#技术栈)
+- [📁 项目结构](#项目结构)
+- [🐳 Docker Compose 部署](#docker-compose-部署)
+- [💻 本地开发](#本地开发)
+- [📚 文档](#文档)
+- [🚧 维护方向](#维护方向)
 
-## 项目展示
+<a id="项目展示"></a>
+## 🌍 项目展示
 
 | 项目 | 信息 |
 | --- | --- |
@@ -39,27 +40,30 @@
 
 ---
 
-## 项目简介
+<a id="项目简介"></a>
+## 📖 项目简介
 
 这是一个以前后端分离方式实现的天气数据查询与分析系统。前端使用 `Vue 3 + TypeScript + Vite`，后端使用 `Django + MySQL + Redis`，并对接第三方天气服务实现实时天气、历史天气、历史空气质量、天气预测、后台管理和访问统计等功能。
 
 ---
 
-## 功能亮点
+<a id="功能亮点"></a>
+## ✨ 功能亮点
 
 | 模块 | 说明 |
 | --- | --- |
-| 实时天气 | 查询城市实时天气、温度、湿度、风力、降水等信息 |
-| 历史天气 | 获取近 10 天历史天气与逐小时记录 |
-| 空气质量 | 展示历史 AQI、污染物指标与趋势信息 |
-| 天气预测 | 基于历史样本进行天气趋势预测与实时对比 |
-| 用户系统 | 登录、注册、找回密码、游客模式和查询次数限制 |
-| 后台管理 | 用户管理、流量统计、接口调用分析和异常统计 |
-| 部署实践 | Docker Compose、Nginx、Gunicorn、MySQL、Redis、Cloudflare |
+| 🌦️ 实时天气 | 查询城市实时天气、温度、湿度、风力、降水等信息 |
+| 🕰️ 历史天气 | 获取近 10 天历史天气与逐小时记录 |
+| 🍃 空气质量 | 展示历史 AQI、污染物指标与趋势信息 |
+| 📈 天气预测 | 基于历史样本进行天气趋势预测与实时对比 |
+| 👤 用户系统 | 登录、注册、找回密码、游客模式和查询次数限制 |
+| 🛠️ 后台管理 | 用户管理、流量统计、接口调用分析和异常统计 |
+| 🚀 部署实践 | Docker Compose、Nginx、Gunicorn、MySQL、Redis、Cloudflare |
 
 ---
 
-## 技术栈
+<a id="技术栈"></a>
+## 🧰 技术栈
 
 | 方向 | 技术 |
 | --- | --- |
@@ -69,7 +73,8 @@
 
 ---
 
-## 项目结构
+<a id="项目结构"></a>
+## 📁 项目结构
 
 ```text
 weather-analytics-graduation-project/
@@ -82,7 +87,8 @@ weather-analytics-graduation-project/
 
 ---
 
-## Docker Compose 部署
+<a id="docker-compose-部署"></a>
+## 🐳 Docker Compose 部署
 
 推荐优先使用 Docker Compose。此方式会自动启动 `MySQL`、`Redis`、`Django` 和 `Vue + Nginx`，你只需要修改项目根目录的 `.env`，不需要再单独修改 `backend/.env` 或 `frontend/.env`。
 
@@ -159,7 +165,8 @@ docker compose up -d --build
 
 ---
 
-## 本地开发
+<a id="本地开发"></a>
+## 💻 本地开发
 
 如果你不使用 Docker，而是想在本机分别启动前后端，请使用这一套配置。此时你需要自己先安装并启动本机 `MySQL` 和 `Redis`。
 
@@ -205,7 +212,8 @@ npm run dev
 
 ---
 
-## 文档
+<a id="文档"></a>
+## 📚 文档
 
 - 前端说明：[frontend/README.md](./frontend/README.md)
 - 后端说明：[backend/README.md](./backend/README.md)
@@ -213,7 +221,8 @@ npm run dev
 
 ---
 
-## 维护方向
+<a id="维护方向"></a>
+## 🚧 维护方向
 
 - 优化天气预测模型与回测方式
 - 完善后台统计与可视化
